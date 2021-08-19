@@ -1,12 +1,12 @@
-require './spec/spec-helper'
+# require './spec/spec-helper'
 require './lib/transform_list'
 
 RSpec.describe TransformList do
   it 'has a name' do
-    old_list = File.open("./file/mixed_list", w)
-    new_list = TransformList.new(old_list, output_1_args)
+    old_list = File.open("./files/mixed_list.txt")
+    new_list = TransformList.new(old_list)
+    expected_outcome = File.open("./files/output_1.txt").read
 
-
-    expect(wolf.name).to eq('Nymeria')
+    expect(new_list).to eq(expected_outcome)
   end
 end
